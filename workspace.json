@@ -1,9 +1,46 @@
 {
   "version": 1,
-  "projects": {},
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
+  "projects": {
+    "eslint-config": {
+      "root": "libs/eslint-config",
+      "sourceRoot": "libs/eslint-config/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/eslint-config/.eslintrc",
+            "tsConfig": [
+              "libs/eslint-config/tsconfig.lib.json",
+              "libs/eslint-config/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/eslint-config/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/eslint-config/jest.config.js",
+            "tsConfig": "libs/eslint-config/tsconfig.spec.json"
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:bundle",
+          "options": {
+            "outputPath": "dist/libs/eslint-config",
+            "tsConfig": "libs/eslint-config/tsconfig.lib.json",
+            "project": "libs/eslint-config/package.json",
+            "entryFile": "libs/eslint-config/src/index.ts",
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup"
+          }
+        }
+      }
+    }
   },
+  "cli": {},
   "schematics": {
     "@nrwl/workspace": {
       "library": {
