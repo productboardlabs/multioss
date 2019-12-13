@@ -36,6 +36,9 @@
     "@nrwl/node": {
       "application": {
         "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
       }
     },
     "@nrwl/nest": {
