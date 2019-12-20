@@ -1,9 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "types": []
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": "../../dist/libs/eslint-config",
+    "importHelpers": false,
+    "declaration": true,
+    "types": ["node"],
   },
-  "exclude": ["**/*.spec.ts"],
-  "include": ["**/*.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+  "include": ["src/**/*.ts", "src/**/*.js"]
 }

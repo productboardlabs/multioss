@@ -1,5 +1,5 @@
-import { hello } from './eslint-config';
-
-test('#hello', () => {
-  expect(hello).toBe('world');
+describe(`eslint-config`, () => {
+  it(`should behave...`, () => {
+    expect(1).toBe(1);
+  });
 });
