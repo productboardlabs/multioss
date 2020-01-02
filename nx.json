@@ -1,5 +1,5 @@
 {
-  "npmScope": "multioss",
+  "npmScope": "productboard",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": "*",
