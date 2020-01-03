@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "TimestampBuilderSchema",
+  "title": "Timestamp builder",
+  "description": "Timestamp builder options",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "description": "Timestamp format",
+      "default": "dd/mm/yyyy"
+    },
+    "path": {
+      "type": "string",
+      "description": "Path to the timestamp file",
+      "default": "./timestamp"
+    }
+  }
+}
