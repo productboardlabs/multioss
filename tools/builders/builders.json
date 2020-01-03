@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "command": {
+      "implementation": "./dist/command/index.js",
+      "schema": "./command/schema.json",
+      "description": "Runs any command line in the operating system."
+    },
+    "file": {
+      "implementation": "./dist/file/file.impl.js",
+      "schema": "./file/schema.json",
+      "description": "Builder that creates timestamp"
+    }
+  }
+}

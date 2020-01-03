@@ -1,6 +1,39 @@
 {
   "version": 1,
   "projects": {
+    "builder-test": {
+      "root": "libs/builder-test",
+      "sourceRoot": "libs/builder-test/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "timestamp": {
+          "builder": "./tools/builders:file",
+          "options": {}
+        },
+        "list": {
+          "builder": "./tools/builders:command",
+          "options": {
+            "command": "ls",
+            "args": [
+              "-la",
+              "./libs/builder-test/"
+            ]
+          }
+        },
+        "custom-scripts": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "node ./tools/scripts/execute.js --prod={args.prod}"
+              }
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
     "eslint-config": {
       "root": "libs/eslint-config",
       "sourceRoot": "libs/eslint-config/src",
@@ -54,7 +87,8 @@
     },
     "@nrwl/react": {
       "application": {
-        "linter": "eslint"
+        "linter": "eslint",
+        "babel": true
       },
       "library": {
         "linter": "eslint"
