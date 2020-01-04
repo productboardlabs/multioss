@@ -17,7 +17,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@productboard/eslint-config": ["libs/eslint-config/src/index.ts"]
+      "@productboard/eslint-config": ["libs/eslint-config/src/index.ts"],
+      "@babel/register": ["types/babel__register"]
     }
   },
   "exclude": ["node_modules", "tmp", "dist"]
