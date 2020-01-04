@@ -7,7 +7,7 @@
       "description": "Runs any command line in the operating system."
     },
     "file": {
-      "implementation": "./dist/file/file.impl.js",
+      "implementation": "./file/index.js",
       "schema": "./file/schema.json",
       "description": "Builder that creates timestamp"
     }

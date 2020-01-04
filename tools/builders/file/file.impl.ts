@@ -1,4 +1,3 @@
-import { TimestampBuilderSchema } from './schema.d';
 import {
   BuilderContext,
   BuilderOutput,
@@ -10,19 +9,14 @@ import { json, getSystemPath, normalize } from '@angular-devkit/core';
 import { writeFile } from 'fs';
 import dateFormat from 'dateformat';
 
-// interface Schema extends TimestampBuilderSchema, json.JsonObject {}
-// export function createTimestamp(
-//   { path, format }: Schema,
-//   { workspaceRoot, logger }: BuilderContext
-// ): Observable<BuilderOutput> {}
-// export default createBuilder(createTimestamp);
+import { TimestampBuilderSchema } from './schema.d';
 
-export default createBuilder<json.JsonObject & TimestampBuilderSchema>(
-  createTimestamp
-);
+interface Schema extends TimestampBuilderSchema, json.JsonObject {}
+
+export default createBuilder(createTimestamp);
 
 export function createTimestamp(
-  { path, format }: TimestampBuilderSchema,
+  { path, format }: Schema,
   { workspaceRoot, logger }: BuilderContext
 ): Observable<BuilderOutput> {
   const timestampFileName = `${getSystemPath(

@@ -1,11 +1,18 @@
 {
   "extends": "../tsconfig.tools.json",
   "compilerOptions": {
-    // "allowJs": true,
-    // "checkJs": true,
+    "allowJs": true,
+    "checkJs": true,
     "alwaysStrict": true,
     "rootDir": ".",
     "outDir": "./dist"
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
