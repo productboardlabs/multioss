@@ -23,6 +23,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
+    "workspace-builders:generate": "yarn workspace-schematic workspace-builder",
     "workspace-builders:build": "rm -rf tools/builders/dist && tsc -p tools/builders"
   },
   "private": true,

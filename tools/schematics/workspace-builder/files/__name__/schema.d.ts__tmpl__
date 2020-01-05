@@ -1,0 +1,4 @@
+export interface <%= utils.classify(name) %>BuilderSchema {
+  command: string;
+  args?: string[];
+}

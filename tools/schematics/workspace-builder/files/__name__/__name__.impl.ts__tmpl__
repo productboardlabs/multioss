@@ -1,0 +1,24 @@
+
+import {
+  BuilderContext,
+  BuilderOutput,
+  createBuilder
+} from '@angular-devkit/architect';
+import { json } from '@angular-devkit/core';
+
+import { <%= utils.classify(name) %>BuilderSchema } from './schema';
+
+interface Schema extends <%= utils.classify(name) %>BuilderSchema, json.JsonObject {}
+
+export function <%= utils.camelize(name) %>BuilderHandler(
+  options: Schema,
+  context: BuilderContext
+): Promise<BuilderOutput> {
+  return new Promise((resolve) => {
+    context.logger.info('<%= name %> builder works!');
+
+    resolve({ success: true });
+  });
+}
+
+export default createBuilder(<%= utils.camelize(name) %>BuilderHandler);

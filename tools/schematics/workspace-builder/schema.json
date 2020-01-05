@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "workspace-builder",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the workspace builder?"
+    },
+    "autoCompile": {
+      "type": "boolean",
+      "description": "use @babel/register to avoid manual compilation",
+      "default": true
+    },
+    "description": {
+      "type": "string",
+      "description": "Skip formatting files",
+      "x-prompt": "Give it some short description"
+    },
+    "skipFormat": {
+      "description": "Skip formatting files",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": ["name"]
+}
