@@ -2,3 +2,5 @@
 
 /dist
 /coverage
+# schematic templates
+**/*__tmpl__
