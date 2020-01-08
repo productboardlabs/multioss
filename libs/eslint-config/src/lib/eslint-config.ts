@@ -1,6 +1,4 @@
 import {
-  legacy,
-  legacyWithoutTypeChecking,
   recommended,
   recommendedWithoutTypeChecking,
   requiresTypeCheckingRules
@@ -23,7 +21,5 @@ export const rules = {
 
 export const configs = {
   recommended,
-  recommendedWithoutTypeChecking,
-  legacy,
-  legacyWithoutTypeChecking
+  recommendedWithoutTypeChecking
 };
