@@ -60,14 +60,17 @@
           }
         },
         "build": {
-          "builder": "@nrwl/web:bundle",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "outputPath": "dist/libs/eslint-config",
-            "tsConfig": "libs/eslint-config/tsconfig.lib.json",
-            "project": "libs/eslint-config/package.json",
-            "entryFile": "libs/eslint-config/src/index.ts",
-            "babelConfig": "@nrwl/react/plugins/bundle-babel",
-            "rollupConfig": "@nrwl/react/plugins/bundle-rollup"
+            "commands": [
+              {
+                "command": "tsc -p libs/eslint-config/tsconfig.lib.json"
+              },
+              {
+                "command": "node tools/scripts/build-package-json libs/eslint-config"
+              }
+            ],
+            "parallel": false
           }
         }
       }
