@@ -1,0 +1,11 @@
+{
+  "migrations": [
+    {
+      "version": "9.0.1-beta.1",
+      "description": "Correctly sets passWithNoTests option",
+      "factory": "./src/migrations/update-9-0-1/update-9-0-1",
+      "package": "@nrwl/jest",
+      "name": "update-9.0.1"
+    }
+  ]
+}
