@@ -10,6 +10,20 @@
   "projects": {
     "eslint-config": {
       "tags": []
+    },
+    "tools": {
+      "tags": []
+    },
+    "builder-test": {
+      "tags": []
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   }
 }
